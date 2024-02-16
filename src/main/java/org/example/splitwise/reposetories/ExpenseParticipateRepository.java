@@ -1,12 +1,14 @@
 package org.example.splitwise.reposetories;
 
-import org.example.splitwise.entities.Expense_participate;
+import org.example.splitwise.entities.ExpenseParticipate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.List;
 
-public interface ExpenseParticipateRepository extends JpaRepository<Expense_participate, Long> {
+@EnableJpaRepositories
+public interface ExpenseParticipateRepository extends JpaRepository<ExpenseParticipate, Long> {
 
 
     @Query(
@@ -15,7 +17,7 @@ public interface ExpenseParticipateRepository extends JpaRepository<Expense_part
                     "where ep.expense_id = ?1",
             nativeQuery = true
     )
-    List<Expense_participate> findAllByExpenseId(Long Expense_id);
+    List<ExpenseParticipate> findAllByExpenseId(Long Expense_id);
 
 
 

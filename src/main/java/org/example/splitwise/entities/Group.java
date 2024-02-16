@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -25,9 +26,15 @@ public class Group {
     @Column(name = "group_name")
     private String name;
 
-    @ManyToMany(
-            mappedBy = "groupList",
-            cascade = CascadeType.ALL
-    )
-    private List<User> users = new ArrayList<>();
+//    @ManyToMany(
+//            mappedBy = "groupList",
+//            cascade = CascadeType.ALL
+//    )
+
+    @ManyToMany
+    @JoinTable(
+            name = "groupUsers",
+            joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> groupUsers;
 }

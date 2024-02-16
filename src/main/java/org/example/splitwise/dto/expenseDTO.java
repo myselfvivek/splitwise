@@ -21,7 +21,7 @@ import java.util.Map;
 @Builder
 public class expenseDTO {
 
-    private Long expense_id;
+//    private Long expense_id;
 
     private double amount;
 

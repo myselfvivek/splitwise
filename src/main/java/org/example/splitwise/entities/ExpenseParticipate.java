@@ -13,7 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "expense_participates")
-public class Expense_participate {
+
+@IdClass(ExpenseParticipateId.class)
+public class ExpenseParticipate {
 
     @Id
     @ManyToOne(
