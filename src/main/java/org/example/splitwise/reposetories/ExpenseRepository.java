@@ -14,7 +14,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     @Query(
             value = "SELECT ex.* \n" +
                     "from expenses as ex JOIN expense_participates as expt ON ex.expense_id = expt.expense_id\n" +
-                    "where (expt.participate_id = ?1 OR ex.user_id = ?1) AND ex.group_id = null",
+                    "where (expt.participate_id = ?1 OR ex.user_id = ?1) AND (ex.group_id is NULL) ",
             nativeQuery = true
     )
     public List<Expense> getAllExpenseByUserId(Long user_id);

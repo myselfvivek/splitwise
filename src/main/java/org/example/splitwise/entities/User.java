@@ -38,20 +38,20 @@ public class User {
     private String password;
 
 
-    @JsonIgnore
-    @ManyToMany(
-            mappedBy = "groupUsers",
-            cascade = CascadeType.ALL
-    )
-    private List<Group> groupList;
-
-
-    @ManyToMany
-    @JoinTable(
-            name = "person_friends",
-            joinColumns = @JoinColumn(name = "person_id"),
-            inverseJoinColumns = @JoinColumn(name = "friend_id")
-    )
-    private Set<User> friends = new HashSet<>();
+//    @JsonIgnore
+//    @ManyToMany(
+//            mappedBy = "groupUsers",
+//            cascade = CascadeType.ALL
+//    )
+//    private List<Group> groupList;
+//
+//
+//    @ManyToMany
+//    @JoinTable(
+//            name = "person_friends",
+//            joinColumns = @JoinColumn(name = "person_id"),
+//            inverseJoinColumns = @JoinColumn(name = "friend_id")
+//    )
+//    private Set<User> friends = new HashSet<>();
 
 }

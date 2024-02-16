@@ -15,7 +15,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
 //    getting all the user
     @RequestMapping(value = "/api/user", method = RequestMethod.GET)
     public List<User> findAllUser()

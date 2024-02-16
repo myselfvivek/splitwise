@@ -56,6 +56,7 @@ public class ExpenseService {
 
     public List<expenseDTO> getAllExpenseByUserId(Long user_id)
     {
+        System.out.println("he");
         List<Expense> expenseList = expenseRepository.getAllExpenseByUserId(user_id);
 
         List<expenseDTO> expenseDTOSList = new ArrayList<>();
